@@ -2,11 +2,13 @@
 {
     public partial class App : Application
     {
-        public App()
+        public static NavigationPage Root { get; private set; }
+
+        public App(MainPage mainPage)
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = Root = new NavigationPage(mainPage);
         }
     }
 }
