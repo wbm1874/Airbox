@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Airbox.ViewModels;assembly=Airbox.Data"
+             xmlns:controls="using:Airbox.Controls"
+             x:Class="Airbox.Views.ImageListView"
+             x:DataType="viewModels:ImageListViewModel"
+             Title="{Binding ImageList.Title, FallbackValue='Images'}">
+
+    <Grid RowDefinitions="*" 
+          ColumnDefinitions="*"
+          Margin="8">
+        <CollectionView ItemsSource="{Binding ImageList.Files, FallbackValue={x:Null}}"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedImage}">
+
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout HorizontalItemSpacing="8" 
+                                 VerticalItemSpacing="8"
+                                 Orientation="Vertical"
+                                 Span="{Binding Span}"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="{x:Type x:String}">
+                    <!-- This clunky layout is required to work-around a MAUI bug with resizing the Image -->
+                    <Border WidthRequest="{Binding Source={RelativeSource FindAncestorBindingContext, AncestorType={x:Type viewModels:ImageListViewModel}}, Path=ImageWidth}"
+                            HeightRequest="{Binding Source={RelativeSource Self}, Path=Width}"
+                            StrokeThickness="0"
+                            Padding="0"
+                            Margin="0"
+                            BackgroundColor="Transparent">
+                        <Image Source="{Binding .}" 
+                               Aspect="AspectFill"/>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+        <Border IsVisible="{Binding IsFullScreenVisible}"
+                BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"
+                StrokeThickness="0"
+                Padding="0"
+                Margin="0">
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding HideFullScreenViewCommand}" />
+            </Border.GestureRecognizers>
+            <Image Source="{Binding FullScreenImage}"
+                   Aspect="AspectFit"
+                   HorizontalOptions="Fill"
+                   VerticalOptions="Fill">
+            </Image>
+        </Border>
+    </Grid>
+
+</ContentPage>

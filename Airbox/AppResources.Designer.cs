@@ -61,42 +61,6 @@ namespace Airbox {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Back.
-        /// </summary>
-        internal static string Back {
-            get {
-                return ResourceManager.GetString("Back", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Boats.
-        /// </summary>
-        internal static string Boats {
-            get {
-                return ResourceManager.GetString("Boats", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Cars.
-        /// </summary>
-        internal static string Cars {
-            get {
-                return ResourceManager.GetString("Cars", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Helicopters.
-        /// </summary>
-        internal static string Helicopters {
-            get {
-                return ResourceManager.GetString("Helicopters", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Image Viewer.
         /// </summary>
         internal static string MainTitle {

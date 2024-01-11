@@ -118,18 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Cars" xml:space="preserve">
-    <value>Cars</value>
+    <value>Autos</value>
   </data>
   <data name="Helicopters" xml:space="preserve">
-    <value>Helicopters</value>
+    <value>Hubschrauber</value>
   </data>
   <data name="Boats" xml:space="preserve">
-    <value>Boats</value>
+    <value>Boote</value>
   </data>
   <data name="Back" xml:space="preserve">
-    <value>Back</value>
-  </data>
-  <data name="MainTitle" xml:space="preserve">
-    <value>Image Viewer</value>
+    <value>Zurück</value>
   </data>
 </root>

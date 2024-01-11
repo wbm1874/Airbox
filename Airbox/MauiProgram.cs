@@ -24,8 +24,7 @@ namespace Airbox
             // Views
             builder.Services
                 .AddSingleton<ImageListView>()
-                .AddSingleton<MainPage>()
-                .AddTransient<ImageView>();
+                .AddSingleton<MainPage>();
 
             // View-models
             builder.Services
